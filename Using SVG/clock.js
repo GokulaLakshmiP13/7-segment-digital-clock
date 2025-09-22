@@ -11,6 +11,29 @@ const digitMap = {
   9: ["a", "b", "c", "d", "f", "g"]
 };
 
+const segmentPoints = {
+  a: "15,20 25,10 75,10 85,20 75,30 25,30",
+  b: "85,20 95,30 95,80 85,90 75,80 75,30",
+  c: "85,90 95,100 95,150 85,160 75,150 75,100",
+  d: "15,160 25,170 75,170 85,160 75,150 25,150",
+  e: "15,90 5,100 5,150 15,160 25,150 25,100",
+  f: "15,20 5,30 5,80 15,90 25,80 25,30",
+  g: "15,90 25,80 75,80 85,90 75,100 25,100"
+};
+
+function createDigit(elemId) {
+  const digitContainer = document.getElementById(elemId);
+  if (!digitContainer) {
+    console.error(`Element with id ${elemId} not found.`);
+    return;
+  }
+            
+  const segments = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+  digitContainer.innerHTML = segments.map(seg => 
+    `<polygon id="${elemId}${seg}" points="${segmentPoints[seg]}" class="segment"/>`
+  ).join('');
+}
+
 
 function clearDigit(digitId) {
   ["a","b","c","d","e","f","g"].forEach(seg => {
@@ -43,3 +66,4 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock();
+
