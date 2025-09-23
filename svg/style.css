@@ -25,7 +25,7 @@
 
 
 .segment {
-  fill: #696565;       
+  fill: #302a2a;        
   transition: fill 0.3s ease;
 }
 
@@ -46,3 +46,4 @@
 .dot.on {
   fill: red;
 }
+
