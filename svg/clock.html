@@ -8,80 +8,27 @@
   <script src="clock.js" defer></script>
 </head>
 <body>
-  <div class="dg-main-container">
-    <div class="dg-container">
+ <div class="clock-container">
+  <svg class="digit" viewBox="0 0 100 180" id="h1"></svg>
+  <svg class="digit" viewBox="0 0 100 180" id="h2"></svg>
 
-      <svg class="digit" viewBox="0 0 100 180" id="h1">
-        <polygon id="h1a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="h1b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="h1c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="h1d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="h1e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="h1f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="h1g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
+  <svg class="colon" viewBox="0 0 30 180">
+    <circle cx="15" cy="60" r="8" class="dot"></circle>
+    <circle cx="15" cy="120" r="8" class="dot"></circle>
+  </svg>
 
-      <svg class="digit" viewBox="0 0 100 180" id="h2">
-        <polygon id="h2a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="h2b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="h2c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="h2d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="h2e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="h2f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="h2g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
+  <svg class="digit" viewBox="0 0 100 180" id="m1"></svg>
+  <svg class="digit" viewBox="0 0 100 180" id="m2"></svg>
+  
+  <svg class="colon" viewBox="0 0 30 180">
+    <circle cx="15" cy="60" r="8" class="dot"></circle>
+    <circle cx="15" cy="120" r="8" class="dot"></circle>
+  </svg>
 
-      <svg class="colon" width="30" height="180">
-        <circle id="colon1a" cx="15" cy="50" r="8" class="dot"></circle>
-        <circle id="colon1b" cx="15" cy="130" r="8" class="dot"></circle>
-      </svg>
+  <svg class="digit" viewBox="0 0 100 180" id="s1"></svg>
+  <svg class="digit" viewBox="0 0 100 180" id="s2"></svg>
+</div>
 
-      <svg class="digit" viewBox="0 0 100 180" id="m1">
-        <polygon id="m1a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="m1b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="m1c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="m1d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="m1e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="m1f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="m1g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
-
-      <svg class="digit" viewBox="0 0 100 180" id="m2">
-        <polygon id="m2a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="m2b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="m2c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="m2d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="m2e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="m2f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="m2g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
-
-      <svg class="colon" width="30" height="180">
-        <circle id="colon2a" cx="15" cy="50" r="8" class="dot"></circle>
-        <circle id="colon2b" cx="15" cy="130" r="8" class="dot"></circle>
-      </svg>
-
-      <svg class="digit" viewBox="0 0 100 180" id="s1">
-        <polygon id="s1a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="s1b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="s1c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="s1d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="s1e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="s1f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="s1g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
-
-      <svg class="digit" viewBox="0 0 100 180" id="s2">
-        <polygon id="s2a" points="15,20 25,10 75,10 85,20 75,30 25,30" class="segment"/>
-        <polygon id="s2b" points="85,20 95,30 95,80 85,90 75,80 75,30" class="segment"/>
-        <polygon id="s2c" points="85,90 95,100 95,150 85,160 75,150 75,100" class="segment"/>
-        <polygon id="s2d" points="15,160 25,170 75,170 85,160 75,150 25,150" class="segment"/>
-        <polygon id="s2e" points="15,90 5,100 5,150 15,160 25,150 25,100" class="segment"/>
-        <polygon id="s2f" points="15,20 5,30 5,80 15,90 25,80 25,30" class="segment"/>
-        <polygon id="s2g" points="15,90 25,80 75,80 85,90 75,100 25,100" class="segment"/>
-      </svg>
-
-    </div>
-  </div>
 </body>
 </html>
+
