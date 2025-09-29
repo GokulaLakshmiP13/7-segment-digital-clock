@@ -1,5 +1,5 @@
 const digitMap = {
-  0: ["a", "b", "c", "d", "e", "f"],        
+  0: ["a", "b", "c", "d", "e", "f"],
   1: ["b", "c"],
   2: ["a", "b", "d", "e", "g"],
   3: ["a", "b", "c", "d", "g"],
@@ -21,6 +21,8 @@ const segmentPoints = {
   g: "15,90 25,80 75,80 85,90 75,100 25,100"
 };
 
+// --- All of your functions are perfectly fine ---
+
 function createDigit(elemId) {
   const digitContainer = document.getElementById(elemId);
   if (!digitContainer) {
@@ -35,21 +37,22 @@ function createDigit(elemId) {
     .join('');
 }
 
-
 function clearDigit(digitId) {
-  ["a","b","c","d","e","f","g"].forEach(seg => {
-  document.getElementById(digitId + seg).classList.remove("on");
+  ["a", "b", "c", "d", "e", "f", "g"].forEach(seg => {
+    const el = document.getElementById(digitId + seg);
+    if (el) el.classList.remove("on");
   });
 }
-
 
 function setDigit(digitId, number) {
   clearDigit(digitId);
-  digitMap[number].forEach(seg => {
-  document.getElementById(digitId + seg).classList.add("on");
-  });
+  if (digitMap[number]) {
+      digitMap[number].forEach(seg => {
+        const el = document.getElementById(digitId + seg);
+        if (el) el.classList.add("on");
+      });
+  }
 }
-
 
 function updateClock() {
   const now = new Date();
@@ -65,6 +68,16 @@ function updateClock() {
   setDigit("s2", parseInt(ss[1]));
 }
 
-setInterval(updateClock, 1000);
-updateClock();
+// --- The Fix: Wait for the HTML to load before running the clock ---
 
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Define all the digit IDs
+  const digitIds = ['h1', 'h2', 'm1', 'm2', 's1', 's2'];
+
+  // 2. Create the segments for each digit (this was missing)
+  digitIds.forEach(id => createDigit(id));
+
+  // 3. Now that the digits are created, start the clock
+  setInterval(updateClock, 1000);
+  updateClock(); // Run once immediately
+});
