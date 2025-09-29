@@ -1,59 +1,58 @@
-.dg-main-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
 }
-
-.dg-container {
-  width: 600px;
-  height: 206px;
-  background: black;
-  display: flex;
+.clock-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #000;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3), inset 0 0 10px #000;
+    border: 2px solid #333;
 }
-
 .digit {
-  width: 75px;
-  height: 186px;
-  background: black;
-  margin: 10px 10px;
-  position: relative; 
+    width: 60px;
+    height: 100px;
+    position: relative;
 }
-
-
-.seg-a { position: absolute; top: 0; left: 8px; width: 50px; height: 10px; }
-.seg-d { position: absolute; bottom: 0; left: 8px; width: 50px; height: 10px; }
-.seg-g { position: absolute; top: 87px; left: 8px; width: 50px; height: 10px; }
-
-
-.seg-b { position: absolute; top: 10px; right: 0; width: 10px; height: 75px; }
-.seg-c { position: absolute; bottom: 10px; right: 0; width: 10px; height: 75px; }
-.seg-e { position: absolute; bottom: 10px; left: 0; width: 10px; height: 75px; }
-.seg-f { position: absolute; top: 10px; left: 0; width: 10px; height: 75px; }
-
-
-.segment {
-  background: rgb(156, 150, 150);
-  transition: 0.3s;
+.colon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100px;
 }
-
-.segment.on {
-  background: red;
-  opacity: 1;
-}
-
-
 .colon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    animation: blink 1s infinite;
 }
-.dot {
-  width: 13px;
-  height: 13px;
-  background: red;
-  border-radius: 50%;
+@keyframes blink {
+    50% { opacity: 0.3; }
 }
+.segment {
+    position: absolute;
+    background-color: #042f00;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+.segment.on {
+    background-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+.segment-a { width: 40px; height: 10px; top: 0; left: 10px; }
+.segment-b { width: 10px; height: 40px; top: 10px; left: 50px; }
+.segment-c { width: 10px; height: 40px; top: 50px; left: 50px; }
+.segment-d { width: 40px; height: 10px; top: 90px; left: 10px; }
+.segment-e { width: 10px; height: 40px; top: 50px; left: 0; }
+.segment-f { width: 10px; height: 40px; top: 10px; left: 0; }
+.segment-g { width: 40px; height: 10px; top: 45px; left: 10px; }
+
