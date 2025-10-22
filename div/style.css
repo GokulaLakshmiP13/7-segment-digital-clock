@@ -1,65 +1,69 @@
 body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #1a1a1a;
-    margin: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .clock-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #000;
-    padding: 20px 30px;
-    border-radius: 15px;
-    border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  padding: 40px;
+  border-radius: 20px;
+  /* Removed box shadow and glow */
 }
 
 .digit {
-    width: 60px;
-    height: 100px;
-    position: relative;
-}
-
-.colon-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100px;
-}
-
-.colon {
-    width: 10px;
-    height: 10px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0.3;
-    }
+  position: relative;
+  width: 40px;
+  height: 80px;
+  margin: 0 5px;
+  background-color: #222;
+  border-radius: 10px;
 }
 
 .segment {
-    position: absolute;
-    background-color: #333; 
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  background-color: #400000; /* dim red when off */
+  transition: background-color 0.2s;
 }
 
 .segment.on {
-    background-color: #ff0000; 
+  background-color: red; /* bright red when on */
 }
 
-.segment-a { width: 40px; height: 10px; top: 0; left: 10px; }
-.segment-b { width: 10px; height: 40px; top: 10px; left: 50px; }
-.segment-c { width: 10px; height: 40px; top: 50px; left: 50px; }
-.segment-d { width: 40px; height: 10px; top: 90px; left: 10px; }
-.segment-e { width: 10px; height: 40px; top: 50px; left: 0; }
-.segment-f { width: 10px; height: 40px; top: 10px; left: 0; }
-.segment-g { width: 40px; height: 10px; top: 45px; left: 10px; }
+/* Segment positions */
+.segment.a { top: 0; left: 8px; width: 24px; height: 6px; border-radius: 2px; }
+.segment.b { top: 8px; right: 0; width: 6px; height: 24px; border-radius: 2px; }
+.segment.c { bottom: 8px; right: 0; width: 6px; height: 24px; border-radius: 2px; }
+.segment.d { bottom: 0; left: 8px; width: 24px; height: 6px; border-radius: 2px; }
+.segment.e { bottom: 8px; left: 0; width: 6px; height: 24px; border-radius: 2px; }
+.segment.f { top: 8px; left: 0; width: 6px; height: 24px; border-radius: 2px; }
+.segment.g { top: 37px; left: 8px; width: 24px; height: 6px; border-radius: 2px; }
+
+.colon {
+  width: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: red;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
